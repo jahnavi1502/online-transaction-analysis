@@ -1,0 +1,5 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shop Transaction Analyzer</title><link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"></head><body>
+<header><a href="/">Shop Transaction Analyzer</a><nav><a href="/">Dashboard</a><a href="/products">Products</a><a href="/orders">Orders</a><a href="/reports">Reports</a></nav></header><main>
+{% with msgs=get_flashed_messages() %}{% for msg in msgs %}<p class="flash">{{msg}}</p>{% endfor %}{% endwith %}
+{% if error is defined and error %}<p class="flash">Database error: {{error}}. Check .env and run schema.sql.</p>{% endif %}
+{% block content %}{% endblock %}</main><footer>Flask · MySQL · Pandas · NumPy · Matplotlib</footer></body></html>
